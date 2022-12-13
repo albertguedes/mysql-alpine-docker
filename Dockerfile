@@ -34,7 +34,7 @@ RUN set -x \
     && sed -Ei 's/^(bind-address|log)/#&/' /etc/mysql/my.cnf \
     && echo -e "\n!includedir /etc/mysql/conf.d" >> /etc/mysql/my.cnf
 
-COPY ./conf.d/* /etc/mysql/conf.d/
+COPY ./mysql/conf.d/* /etc/mysql/conf.d/
 
 COPY ./docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
