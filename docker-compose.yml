@@ -1,0 +1,35 @@
+#
+# docker-compose.yml - yml script to execute docker commands to generate images 
+#                      and containers to the project.
+#
+# created: 2022-12-07
+# author: albert r. carnier guedes (albert@teko.net.br)
+# 
+# Distributed under the MIT License. See LICENSE for more information.
+#
+version: '3.8'
+
+services:
+
+    # Create the database image and container.
+    db:
+
+        # Create the image.        
+        build: 
+            context: .
+        
+        # Custom name for the image.
+        image: alpine-mariadb-image
+
+        # Custom name for the container.
+        container_name: alpine-mariadb-container
+
+        environment:
+            - MYSQL_ROOT_PASSWORD=docker
+
+        # Expose the port "3306" on host port "6033".
+        ports: 
+            - "6033:3306"
+
+        volumes:
+            - "./mysql/data:/var/lib/mysql"
