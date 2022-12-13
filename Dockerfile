@@ -1,6 +1,15 @@
+# Dockerfile - docker script to create a image.
+#
+# created: 2021-02-14
+# author: Ammar K. ( https://github.com/akai-z )
+# contributor: albert r. carnier guedes (albert@teko.net.br)
+#
+# Distributed under the MIT License. See LICENSE.md for more information.
+# 
 FROM alpine:3.8
 
-LABEL maintainer="Ammar K."
+LABEL maintainer="Ammar K. ( https://github.com/akai-z )"
+LABEL contributor="Albert R. Carnier Guedes (albert@teko.net.br)"
 
 RUN set -x \
     && addgroup -S mysql \
